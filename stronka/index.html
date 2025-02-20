@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stronka</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+      }
+      nav {
+        position: fixed;
+        display: flex;
+        gap: 30px;
+        top: 0;
+        left: 0;
+        background-color: black;
+        color: white;
+        width: 100%;
+        font-size: 2rem;
+        a {
+          color: white;
+          text-decoration: none;
+          transition: 0.2s;
+          &:hover {
+            color: yellowgreen;
+          }
+        }
+      }
+      section {
+        box-sizing: border-box;
+        padding: 2rem;
+        padding-top: 3rem;
+        min-height: 100svh;
+        display: none;
+
+        &:target {
+          display: block;
+        }
+      }
+      #home {
+        display: block;
+      }
+      .url {
+        padding: 10px 20px;
+      }
+      .url--active {
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#home" class="url url-active">Strona główna</a>
+      <a href="#about" class="url">O nasz</a>
+      <a href="#contact" class="url">Kontakt</a>
+    </nav>
+
+    <section id="about">
+      <h1>O nasz</h1>
+      <p>Informacje o firmie</p>
+    </section>
+
+    <section id="contact">
+      <h1>Kontakt</h1>
+      <p>
+        Skontaktuj się z nami! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Numquam id veniam officiis! Laboriosam nihil
+        voluptatibus voluptatum aspernatur! Deleniti, numquam? Illo explicabo
+        optio quod quae dolore. Quia qui est temporibus pariatur?
+      </p>
+    </section>
+    <section id="home">
+      <h1>Strona główna</h1>
+      <p>Witaj na stronie głównej !</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+        perspiciatis, doloremque ducimus sed, assumenda debitis consequuntur
+        adipisci cum sunt incidunt aliquid ut reprehenderit aspernatur odio
+        facere nam temporibus ipsa voluptas!
+      </p>
+    </section>
+    <script>
+      const a_list = document.querySelectorAll(" nav a");
+      a_list.forEach((a) => {
+        a.addEventListener("click", function () {
+          a_list.forEach((a) => {
+            a.classList.remove("url--active");
+          });
+          this.classList.add("url--active");
+        });
+      });
+    </script>
+  </body>
+</html>
