@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 100dvh;
+      }
+      [data-name="square"] {
+        margin: 20px;
+        width: 10vw;
+        height: 10vw;
+        background-color: #432aaa;
+      }
+      .rect {
+        margin: 20px;
+        width: 7vw;
+        height: 16vh;
+        background-color: #b81c89;
+      }
+      #circle {
+        margin: 20px;
+        width: 10vw;
+        height: 10vw;
+        background-color: #f1c40f;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect"></div>
+    <div data-name="square"></div>
+    <div id="circle"></div>
+    <script>
+      gsap.to(".rect", {
+        duration: 5,
+        x: 200,
+        y: 200,
+        scale: 2,
+        rotation: 360,
+        backgroundColor: "#f1c40f",
+        borderRadius: "50%",
+        ease: "elastic",
+        onComplete: () => {
+          console.log("Animation completed");
+        },
+      });
+    </script>
+  </body>
+</html>
+<!--5:42:00  -->
